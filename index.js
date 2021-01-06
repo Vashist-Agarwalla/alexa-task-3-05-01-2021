@@ -1,7 +1,6 @@
 const fs = require("fs");
 const { exit } = require("process");
 const readline = require("readline");
-const { start } = require("repl");
 
 const r1 = readline.createInterface({
     input: process.stdin,
