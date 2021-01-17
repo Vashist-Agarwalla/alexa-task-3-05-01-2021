@@ -1,20 +1,11 @@
-const express = require('express');
-const mongodb = require('mongodb');
+const fs = require("fs");
+const { exit } = require("process");
+const readline = require("readline");
 
-const app = express();
-
-let collection;
-
-const testFunction = async () => {
-    try {
-        await client.connect();
-        console.log("Mongo connected");
-        collection = client.db().collection("Vashist");
-    } catch (error) {
-        console.error(error);
-        process.exit(-1);
-    }
-};
+const r1 = readline.createInterface({
+    input: process.stdin,
+    output: process.stdout
+});
 
 startprg();
 
@@ -90,9 +81,3 @@ function viewad() {
     console.table(JSON.parse(dataBuffer.toString()))
     startprg();
 }
-
-testFunction().then(() => {
-    app.listen(8080, () => {
-        console.log('LISTENING ON PORT 8080!')
-    })
-})
